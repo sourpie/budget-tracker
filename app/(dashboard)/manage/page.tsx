@@ -131,9 +131,13 @@ function CategoryCard({ category }: { category: Category }) {
   return (
     <div className="flex border-separate flex-col justify-between rounded-md border shadow-md shadow-black/[0.1]">
       <div className="flex flex-col items-center gap-2 p-4">
-        <span className="text-3xl" role="img">
-          {category.icon}
-        </span>
+        <p
+          className="flex items-center justify-center gap-4 text-3xl"
+          role="img"
+        >
+          <span>{category.icon}</span>
+          <span className="text-base">{category.name}</span>
+        </p>
       </div>
       <DeleteCategoryDialog
         category={category}
