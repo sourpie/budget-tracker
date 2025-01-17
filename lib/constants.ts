@@ -1,0 +1,1 @@
+export const MAX_DAYS_RANGE = 90;
