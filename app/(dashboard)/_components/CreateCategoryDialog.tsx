@@ -43,7 +43,7 @@ import { Category } from "@prisma/client";
 interface Props {
   type: TransactionType;
   successCallback: (category: Category) => void;
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
 }
 
 function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
