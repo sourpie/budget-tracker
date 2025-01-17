@@ -31,7 +31,7 @@ function MobileNavbar() {
 
   return (
     <div className="block border-separate bg-background md:hidden">
-      <nav className="container flex items-center justify-between px-8">
+      <nav className="w-full flex items-center justify-between px-8">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant={"ghost"} size={"icon"}>
@@ -46,7 +46,7 @@ function MobileNavbar() {
                   key={item.label}
                   link={item.label}
                   label={item.label}
-                  clickCallback = {()=> setIsOpen((prev)=> !prev)}
+                  clickCallback={() => setIsOpen((prev) => !prev)}
                 />
               ))}
             </div>
@@ -66,8 +66,8 @@ function MobileNavbar() {
 
 function DesktopNavbar() {
   return (
-    <div className="hidden border-separate border-b bg-background md:block">
-      <nav className="container flex items-center justify-between px-8">
+    <div className="hidden w-full border-separate border-b bg-background md:block">
+      <nav className="w-full flex items-center justify-between px-8">
         <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
           <Logo />
           <div className="flex h-full">
@@ -89,7 +89,15 @@ function DesktopNavbar() {
   );
 }
 
-function NavbarItem({ link, label, clickCallback }: { link: string; label: string; clickCallback? : () =>void}) {
+function NavbarItem({
+  link,
+  label,
+  clickCallback,
+}: {
+  link: string;
+  label: string;
+  clickCallback?: () => void;
+}) {
   const pathname = usePathname();
   const isActive = pathname === link;
 
